@@ -1,0 +1,82 @@
+*************************************************************************************************************************
+* FILE:      /GLIDE_RWD_Work/project/DATAHUB/users/schnem44/rwd/db/marketscan/ccae_mdcr/vdm_02/2016_e4/work/program/bteq/stage2core_v02_mdcr_t.bteq
+*
+* FUNCTION:  Read from PS_RWD_VDM_MDCR.V02_MDCR_T and write to PC_RWD_VDM_MDCR.V02_MDCR_T
+*
+* HISTORY:   Written by 04-stage2core.sas
+*************************************************************************************************************************
+ 
+*** Options***
+.width 200
+ 
+*** Logon ***
+.logmech ldap
+.RUN FILE /home/users/schnem44/.pw/schnem44_tms_eu_ldap.bteq
+ 
+INSERT INTO PC_RWD_VDM_MDCR.V02_MDCR_T
+(
+ENROLID,
+AGE,
+AGEGRP,
+DATATYP,
+DOBYR,
+DTEND,
+DTSTART,
+EECLASS,
+EESTATU,
+EFAMID,
+EGEOLOC,
+EMPREL,
+HLTHPLAN,
+INDSTRY,
+LOAD_ID,
+MEMDAYS,
+MHSACOVG,
+MSA,
+PHYFLAG,
+PLANTYP,
+REGION,
+ROW_NUMBER_,
+RX,
+SEQNUM,
+SEX,
+VALID_END,
+VALID_START,
+VERSION_,
+YEAR_
+)
+SELECT
+ENROLID,
+AGE,
+AGEGRP,
+DATATYP,
+DOBYR,
+DTEND,
+DTSTART,
+EECLASS,
+EESTATU,
+EFAMID,
+EGEOLOC,
+EMPREL,
+HLTHPLAN,
+INDSTRY,
+LOAD_ID,
+MEMDAYS,
+MHSACOVG,
+MSA,
+PHYFLAG,
+PLANTYP,
+REGION,
+ROW_NUMBER_,
+RX,
+SEQNUM,
+SEX,
+VALID_END,
+VALID_START,
+VERSION_,
+YEAR_
+FROM PS_RWD_VDM_MDCR.V02_MDCR_T;
+ 
+*** LOGOFF and QUIT ***
+.LOGOFF;
+.QUIT;
